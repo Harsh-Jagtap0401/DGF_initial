@@ -1,0 +1,38 @@
+/* src/components/Header.css */
+
+body{
+  background-color: rgba(239, 238, 245, 0.674) !important;
+  overflow: hidden;
+}
+.header {
+  margin-top: 20px;
+  background-color: #ebebf8fa !important;
+  color: black !important;
+  box-shadow: none !important;
+  border-radius: 14px;
+  margin-right: 20px;
+  margin-left: 10px;
+  width: calc(100% - 280px) !important; /* Adjust width to account for sidebar */
+}
+ 
+.search {
+  display: flex;
+  align-items: center;
+  /* background-color: rgba(230, 224, 245, 0.463) !important; */
+
+  box-shadow: none;
+
+  padding: 5px 10px;
+}
+ 
+.search-input {
+  margin-left: 10px;
+  flex: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+ 
+.profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

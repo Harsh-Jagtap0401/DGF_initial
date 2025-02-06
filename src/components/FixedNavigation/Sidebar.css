@@ -1,0 +1,18 @@
+/* src/components/Sidebar.css */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px; /* Ensure this matches the header's left value */
+  height: 100vh;
+  background-color: rgba(183, 199, 246, 0.831);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+ 
+.logo img {
+  width: 100%;
+  max-width: 150px;
+  display: block;
+  margin: 0 auto 20px;
+}
