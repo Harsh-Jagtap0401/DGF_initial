@@ -1,0 +1,48 @@
+.table-container {
+    margin-left: 260px !important; /* Adjust this according to the sidebar width */
+    width: calc(100% - 280px) !important; /* Adjust width to account for sidebar and right margin */
+    margin-right: 20px !important; /* Adjust right margin */
+    margin-top: 80px !important; /* Adjust top margin */
+    /* height: 460px !important; Increase height to accommodate pagination */
+    overflow: hidden !important; /* Prevent scrolling */
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 10px !important;
+  }
+  
+  .MuiTableCell-root {
+    padding: 8px !important; /* Decrease padding to reduce row height */
+    font-size: 12px !important; /* Adjust font size if needed */
+    height: 48px !important; /* Set a fixed height for table cells */
+  }
+  
+  .MuiTableRow-root {
+    height: 48px !important; /* Set a fixed height for table rows */
+  }
+  
+  .MuiTableRow-root:hover {
+    background-color: #f9f9f9 !important;
+  }
+  
+  .MuiAvatar-root {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+    background-color: #3f51b5 !important;
+    color: white !important;
+  }
+  
+  .MuiTypography-root {
+    font-size: 14px !important;
+  }
+  
+  .table-actions {
+    display: flex !important;
+    gap: 5px !important;
+  }
+  
+  .table-container th,
+  .table-container td {
+    width: 150px !important; /* Set a fixed width for each column */
+    text-align: left !important; /* Ensure text is aligned to the left */
+  }
