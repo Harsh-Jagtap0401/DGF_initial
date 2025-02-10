@@ -1,5 +1,5 @@
 // src/components/Header.jsx
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { AppBar, Toolbar, IconButton, InputBase, Menu, MenuItem, Avatar, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -17,7 +17,7 @@ const Header = () => {
   };
  
   return (
-    <AppBar position="fixed" className="header">
+    <AppBar position="static" className="header">
       <Toolbar>
         {/* Search Bar */}
         <div className="search">
@@ -39,9 +39,9 @@ const Header = () => {
  
         {/* Profile Image and Dropdown */}
         <div className="profile" onClick={handleMenuOpen}>
-          <Avatar alt="User" src="/profile.jpg" /> {/* Replace with your profile image path */}
+          <Avatar alt="User" src="https://storage.googleapis.com/a1aa/image/9QeNTGSOYBwARDeVbphU6jBm60J989tVfBHbOswHzBQ.jpg" /> {/* Replace with your profile image path */}
           <Typography variant="body1" style={{ marginLeft: '10px' }}>
-            John Doe
+            Joe Maison
           </Typography>
         </div>
  

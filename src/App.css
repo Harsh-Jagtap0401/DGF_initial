@@ -1,7 +1,8 @@
 /* src/App.css */
 .app {
   display: flex;
-  min-height: 100vh;
+  max-height: 200vh;
+ 
 }
  
 .content {
@@ -9,4 +10,8 @@
   margin-top: 64px; /* Adjust based on the header height */
   padding: 20px;
   flex-grow: 1;
+
+}
+body{
+  max-height: 120vh;
 }

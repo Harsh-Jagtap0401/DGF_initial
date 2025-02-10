@@ -1,14 +1,22 @@
-import React from 'react'
+
 import Sidebar from './FixedNavigation/Sidebar'
 import Header from './FixedNavigation/Header'
 
-const FixedComponent = () => {
+import PropTypes from 'prop-types';
+
+const FixedComponent = ({children}) => {
   return (
     <>
      <Sidebar />
      <Header />
+     <div>{children}</div>
     </>
-  )
-}
+  );
+};
 
-export default FixedComponent
+FixedComponent.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+
+export default FixedComponent;

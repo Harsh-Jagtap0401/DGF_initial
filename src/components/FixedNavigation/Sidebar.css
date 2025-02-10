@@ -5,7 +5,7 @@
   left: 0;
   width: 200px; /* Ensure this matches the header's left value */
   height: 100vh;
-  background-color: rgba(183, 199, 246, 0.831);
+  background-color: #CFDCFF;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -22,9 +22,10 @@
   padding: 0;
 }
 .sidebar-item:hover {
- background-color: rgba(255, 255, 255, 0.587) !important;
+ background-color: rgba(249, 239, 239, 0.587) !important;
  color: rgb(34, 35, 36) !important;
+ font-weight:bold !important;
 }
 .sidebar-item:hover .MultiListItemIcon {
-  color: #ffffff92 !important;
+  color: #ffffffd2 !important;
 }
