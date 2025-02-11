@@ -3,31 +3,31 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FixedComponent from './components/FixedComponent';
 import TrainingContainer from './components/TrainingContainer';
 import NewRequestContainer from './components/NewRequestContainer';
-import InitiateTrainingContainer from './components/InitiateTrainingContainer';
+import InitiateTrainingContainer from './components/InitiateTrainingContainer.jsx';
 import SpocContainer from './components/SpocContainer';
+import Login from './components/Auth/Login';
+import ProtectedRoute from './components/Auth/ProctectedRoutes.jsx';
+import { AuthProvider } from './components/Auth/AuthContext.jsx';
 
 function App() {
   const obj = {
-    // backgroundColor: "white",
     color: "black",
   };
 
   return (
-    <>
+    <AuthProvider>
       <div style={obj} className='App'>
         <Router>
-          <FixedComponent>
-            <Routes>
-              <Route path="/" element={<TrainingContainer />} />
-              <Route path="/new-request" element={<NewRequestContainer />} />
-              <Route path="/initiate-training" element={<InitiateTrainingContainer />} />
-               {/* Added route for InitiateTrainingContainer */}
-               <Route path='/spoc-approval' element={<SpocContainer />} />
-            </Routes>
-          </FixedComponent>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<ProtectedRoute element={<FixedComponent><TrainingContainer /></FixedComponent>} />} />
+            <Route path="/new-request" element={<ProtectedRoute element={<FixedComponent><NewRequestContainer /></FixedComponent>} />} />
+            <Route path="/initiate-training" element={<ProtectedRoute element={<FixedComponent><InitiateTrainingContainer /></FixedComponent>} />} />
+            <Route path='/spoc-approval' element={<ProtectedRoute element={<FixedComponent><SpocContainer /></FixedComponent>} />} />
+          </Routes>
         </Router>
       </div>
-    </>
+    </AuthProvider>
   );
 }
 

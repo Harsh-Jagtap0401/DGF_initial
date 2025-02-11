@@ -8,7 +8,7 @@ import './Header.css';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const { user, logout } = useContext(AuthContext);
+  const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleMenuOpen = (event) => {
@@ -46,7 +46,7 @@ const Header = () => {
         <div className="profile" onClick={handleMenuOpen}>
           <Avatar alt="User" src="https://storage.googleapis.com/a1aa/image/9QeNTGSOYBwARDeVbphU6jBm60J989tVfBHbOswHzBQ.jpg" /> {/* Replace with your profile image path */}
           <Typography variant="body1" style={{ marginLeft: '10px' }}>
-            {user ? user.name : 'User'}
+            Joe Maison
           </Typography>
         </div>
 

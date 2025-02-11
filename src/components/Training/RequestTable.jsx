@@ -6,6 +6,17 @@ import EditIcon from "@mui/icons-material/Edit";
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import "../Training/RequestTable.css";
 
+// Define the getRoleType function directly in this file
+const getRoleType = (roleId) => {
+  if (roleId === 10) {
+    return 'spoc';
+  } else if (roleId === 4) {
+    return 'CapDev';
+  } else {
+    return 'requester';
+  }
+};
+
 const data = [
   { id: "123", project: "iAlign", learners: 5, completedLearners: 3, objective: "Upskilling", techStack: "Accessibility", requestedOn: "Jan 20, 2025", status: "Learning in Progress" },
   { id: "231", project: "Staffing Nation", learners: 5, completedLearners: 2, objective: "Upskilling", techStack: "React", requestedOn: "Jan 20, 2025", status: "SPOC Approval Awaited" },
@@ -27,18 +38,20 @@ const data = [
 ];
 
 const requesterInProgressStatuses = ["SPOC Approval Awaited", "Learning in Progress", "Preparing Learning Plan", "Clarification Awaited"];
-const spokeInProgressStatuses = ["Approval Requested", "Preparing Learning Plan", "Learning in Progress", "Clarification Awaited"];
+const spocInProgressStatuses = ["Approval Requested", "Preparing Learning Plan", "Learning in Progress", "Clarification Awaited"];
 const capDevInProgressStatuses = ["Initiate Training", "Approval Requested", "Preparing Learning Plan", "Learning in Progress", "Clarification Awaited"];
 const completedStatuses = ["Completed", "Partially Completed", "Completed with Delay"];
 const statuses = ["In Progress", "Completed", "Incomplete", "Rejected", "Hold"];
 const daysOptions = ["Last 7 days", "Last 30 days", "Last 90 days", "All"];
 
-const RequestTable = ({ role }) => {
+const RequestTable = ({ roleId }) => {
   const navigate = useNavigate();
   const [page, setPage] = useState(0);
   const [selectedStatus, setSelectedStatus] = useState("In Progress");
   const [selectedDays, setSelectedDays] = useState("All");
   const rowsPerPage = 5;
+
+  const role = getRoleType(roleId);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -55,8 +68,8 @@ const RequestTable = ({ role }) => {
   };
 
   const getInProgressStatuses = () => {
-    if (role === "spoke") {
-      return spokeInProgressStatuses;
+    if (role === "spoc") {
+      return spocInProgressStatuses;
     } else if (role === "CapDev") {
       return capDevInProgressStatuses;
     } else {
@@ -191,7 +204,7 @@ const RequestTable = ({ role }) => {
 };
 
 RequestTable.propTypes = {
-  role: PropTypes.string.isRequired,
+  roleId: PropTypes.number.isRequired,
 };
 
 export default RequestTable;
